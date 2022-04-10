@@ -189,18 +189,19 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	git clone https://github.com/SuperrMurlocc/InformatykaBocik
 	```
 
+
 - W pliku `src/secrets.py` zmodyfikuj
+	> **UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
 
 	```
     # _SECRETS['TOKEN'] = str(os.getenv('DISCORD_TOKEN'))
 	```
-
 	na
-
 	```
 	_SECRETS['TOKEN'] = "twój.token.Discord"
 	```
 	gdzie `twój.token.Discord` to **Token** utworzony w poprzednim kroku
+
 
 - Uruchom bota za pomocą
 
