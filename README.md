@@ -121,9 +121,9 @@ Oczywiście dolarek przykładowy, do zmiany w mainie
 
 - [ ] Dokumentacja czyli jak się danej komendy używa
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
-- [ ] Uzupełnienie .env o dane serwera Inf WEEIA
 - [ ] Komenda do przesyłania sugestii
 - [ ] Komendy w języku polskim? Chyba byłoby łatwiej zapamiętać (lub może wybór języka)
+- [ ] Podpięcie Bota do serwera Inf WEEIA
 
 See the [open issues](https://github.com/SuperrMurlocc/InformatykaBocik/issues) for a full list of proposed features (and known issues).
 
