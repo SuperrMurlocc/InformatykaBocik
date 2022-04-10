@@ -52,7 +52,7 @@
       </ul>
     </li>
     <li>
-      <a href="#local-installation">Lokalna instalacja</a>
+      <a href="#lokalna-instancja">Lokalna instancja</a>
       <ul>
         <li><a href="#instalacja">Instalacja</a></li>
         <li><a href="#tworzenie-klucza-api">Tworzenie klucza api</a></li>
