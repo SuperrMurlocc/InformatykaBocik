@@ -27,20 +27,15 @@
 <br />
 <div align="center">
   <a href="https://github.com/SuperrMurlocc/InformatykaBocik">
-    <img src="img/logo.png" alt="Logo" width="80" height="80">
+    <img src="res/img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Inf WEEIA Discord Bot</h3>
 
   <p align="center">
-    <a href="https://github.com/SuperrMurlocc/InformatykaBocik"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/SuperrMurlocc/InformatykaBocik">View Demo</a>
+    <a href="https://github.com/SuperrMurlocc/InformatykaBocik/issues">Zgłoś błąd</a>
     ·
-    <a href="https://github.com/SuperrMurlocc/InformatykaBocik/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/SuperrMurlocc/InformatykaBocik/issues">Request Feature</a>
+    <a href="https://github.com/SuperrMurlocc/InformatykaBocik/issues">Zaproponuj feature</a>
   </p>
 </div>
 
@@ -48,90 +43,67 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Spis treści</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#o-projekcie">O projekcie</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#zbudowane-przy-pomocy">Zbudowane przy pomocy</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#local-installation">Lokalna instalacja</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#instalacja">Instalacja</a></li>
+        <li><a href="#tworzenie-klucza-api">Tworzenie klucza api</a></li>
+        <li><a href="#uruchomienie-bota">Uruchomienie bota</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#komendy">Komendy</a></li>
+      <ul>
+        <li><a href="#ankiety">Ankiety</a></li>
+      </ul>
+    <li><a href="#sugestie">Sugestie</a></li>
+    <li><a href="#kontrybucja">Kontrybucja</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#uznania">Uznania</a></li>
   </ol>
 </details>
 
 
-<!-- ABOUT THE PROJECT -->
+<!-- O PROJEKCIE -->
 ## O projekcie
 
 
-katalogi
+Katalogi:
 
+- **res**:
+    - zasoby
 - **src**:
-	- **keep_alive.py** do podtrzymywania repla,
-	- **checks.py** w który będziemy wrzucać ograniczenia komend (np tylko dla administratorów itd)
-	- **secrets.py** czyli banalna obsługa sekretów
-
-- **cogs**:
-	- każdy cog jest „modułem” czyli zestawem komend
-	- Każdy moduł można ładować i wyładować (patrz sekcja moduły w main)
-
-- **dev**:
-	- Tam można tez wrzucać jakieś komendy tylko dla nas (devów)
-	- jest komenda ping, taka do sprawdzenia czy bot stoi i jaki ma ping.
-
-**polls.py** - pierwsze szkice ankiety na tak/nie oraz wielo opcjonalnej
-
-
-### Ankiety
-
-tak / nie - użycie
-```
-$ynpoll Przykładowe pytanie?
-```
-wiele odp. - użycie
-```
-$mopoll co lubicie bardziej? & krewetki | banany & 1
-```
-
-Oczywiście dolarek przykładowy, do zmiany w mainie
+    - **keep_alive.py** do podtrzymywania repla;
+    - **checks.py** ograniczenia komend (np tylko dla administratorów itd);
+    - **secrets.py** czyli banalna obsługa sekretów;
+    - **cogs**:
+        - każdy cog jest „modułem” czyli zestawem komend;
+        - Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
+        - **dev**:
+            - Komendy pomocnicze dla developerów.
+        - **polls.py**:
+            - Moduł odpowiedzialny za tworzenie ankiet.
+- **templates**:
+    - templatki pomocnicze
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+### Zbudowane przy pomocy
 
+* [Python 3](https://www.python.org/)
+* [Discord.py](https://discordpy.readthedocs.io/en/stable/index.html)
+* [replit.com](https://replit.com/~)
 
-<!-- ROADMAP -->
-## Sugestie lub rzeczy do poprawki (priorytet malejący)
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
 
-- [ ] Ankiety:
-	- [ ] Maksymalna liczba odpowiedzi w ankiecie
-	- [ ] Słupki postępu
-
-- [ ] Dokumentacja czyli jak się danej komendy używa
-- [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
-- [ ] Komenda do przesyłania sugestii
-- [ ] Komendy w języku polskim? Chyba byłoby łatwiej zapamiętać (lub może wybór języka)
-- [ ] Podpięcie Bota do serwera Inf WEEIA
-
-See the [open issues](https://github.com/SuperrMurlocc/InformatykaBocik/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- GETTING STARTED -->
-## Lokalna instancja Bota
+<!-- LOKALNA INSTALACJA -->
+## Lokalna instancja
 
 Ten Bot został zaprojektowany z myślą o prostym dodawaniu funkcjonalności przez użytkowników. Jeśli chcesz uruchonić go na swojej maszynie, postępuj zgodnie z poniższą instrukcją.
 
@@ -139,9 +111,9 @@ Ten Bot został zaprojektowany z myślą o prostym dodawaniu funkcjonalności pr
 
 Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota narzędzia.
 * [`Python`](https://www.python.org/downloads/) w wersji 3.8 lub wyższej oraz poniższe biblioteki:
-  ```sh
-  python --version
-  ```
+    ```sh
+    python3 --version
+    ```
 
 	* Instalator pakietów [`pip`](https://www.odoo.com/forum/help-1/how-to-install-pip-in-python-3-on-ubuntu-18-04-167715)
 
@@ -152,13 +124,13 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 * `discord.py` - API Discorda
 
 	```sh
-	pip install discord.py
+	pip3 install discord.py
 	```
 
 * `dotenv`
 
 	```sh
-	pip install dotenv
+	pip3 install python-dotenv
 	```
 
 ### Tworzenie klucza API
@@ -173,7 +145,7 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 
 5. Zaznacz odpowiednie permisje 
 	
-	![image info e.g. Alt](img/permissions.png)
+<img src="res/img/permissions.png" width="300">
 
 6. Skopiuj **Invite Link**
 
@@ -190,15 +162,12 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	```
 
 
-- W pliku `src/secrets.py` zmodyfikuj
-	> **UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
-
+- Stwórz plik `.env` i umieść w nim
+	> *UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
+	
 	```
-    # _SECRETS['TOKEN'] = str(os.getenv('DISCORD_TOKEN'))
-	```
-	na
-	```
-	_SECRETS['TOKEN'] = "twój.token.Discord"
+	# .env
+	CORD_TOKEN = "twój.token.Discord"
 	```
 	gdzie `twój.token.Discord` to **Token** utworzony w poprzednim kroku
 
@@ -206,76 +175,74 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 - Uruchom bota za pomocą
 
 	```sh
-	python main.py
+	python3 main.py
 	```
-
+	
 	**Gotowe** 🎉
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
+
+<!-- KOMENDY -->
+## Komendy
+
+### Ankiety
+
+tak / nie 
+```
+$ynpoll Przykładowe pytanie?
+```
+wiele odp.
+```
+$mopoll co lubicie bardziej? & krewetki | banany & 1
+```
+
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
+
+<!-- SUGESTIE -->
+## Sugestie
+
+- [ ] Ankiety:
+	- [ ] Implementacja maksymalnej liczby odpowiedzi w ankiecie
+	- [ ] Dynamiczne słupki postępu
+- [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
+- [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
+- [ ] Komenda do przesyłania sugestii
+- [ ] Aliasy do komend w języku polskim
+- [ ] Podpięcie Bota do serwera INF WEEIA
+
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
+
+<!-- KONTRYBUCJA -->
+## Kontrybucja
+
+Jeśli masz jakieś sugestie, które jesteś w stanie sam zaimplementować, zforkuj to repozytorium i stwórz pull requesta.
+Zadbaj proszę o czysty kod, korzystaj z gotowych templatów w katalogu **templates** oraz zachowaj już istniejący styl.
+
+1. Zforkuj projekt
+2. Stwórz branch dla swojego feature'a (`git checkout -b feature/AmazingFeature`)
+3. Zcommituj swoje zmiany (`git commit -m 'Add some AmazingFeature'`)
+4. Dokonaj pusha (`git push origin feature/AmazingFeature`)
+5. Otwórz pull request
+
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 
-### Built With
+<!-- KONTAKT -->
+## Kontakt
 
-* [Python](https://www.python.org/)
-* [Discord.py](https://discordpy.readthedocs.io/en/stable/index.html)
-* [replit.com](https://replit.com/~)
+W razie pytań piszcie do twórców, znajdziecie ich w zakładce Contributors. A w przypadku sugestii i błędów zapraszamy do otwarcia **Issue**.
+Link do projektu: [https://github.com/SuperrMurlocc/InformatykaBocik](https://github.com/SuperrMurlocc/InformatykaBocik)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the (...). license See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - email@email_client.com
-
-Project Link: [https://github.com/SuperrMurlocc/InformatykaBocik](https://github.com/SuperrMurlocc/InformatykaBocik)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- UZNANIA -->
+## Uznania
 
 * [.README Template](https://github.com/othneildrew/Best-README-Template)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -288,10 +255,4 @@ Project Link: [https://github.com/SuperrMurlocc/InformatykaBocik](https://github
 [stars-url]: https://github.com/SuperrMurlocc/InformatykaBocik/stargazers
 [issues-shield]: https://img.shields.io/github/issues/SuperrMurlocc/InformatykaBocik.svg?style=for-the-badge
 [issues-url]: https://github.com/SuperrMurlocc/InformatykaBocik/issues
-[license-shield]: https://img.shields.io/github/license/SuperrMurlocc/InformatykaBocik.svg?style=for-the-badge
-[license-url]: https://github.com/SuperrMurlocc/InformatykaBocik/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: img/screenshot.png
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[product-screenshot]: res/img/screenshot.png
