@@ -16,14 +16,12 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
-
+![GitHub all releases](https://img.shields.io/github/downloads/SuperrMurlocc/InformatykaBocik/total)
+![Discord active users](https://img.shields.io/discord/761150834489688094?label=discord)
+![GitHub issues](https://img.shields.io/github/issues/SuperrMurlocc/InformatykaBocik)
+![GitHub last commit](https://img.shields.io/github/last-commit/SuperrMurlocc/InformatykaBocik)
+![GitHub contributors](https://img.shields.io/github/all-contributors/SuperrMurlocc/InformatykaBocik)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -124,7 +122,8 @@ Oczywiście dolarek przykładowy, do zmiany w mainie
 - [ ] Dokumentacja czyli jak się danej komendy używa
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [ ] Uzupełnienie .env o dane serwera Inf WEEIA
-
+- [ ] Komenda do przesyłania sugestii
+- [ ] Komendy w języku polskim? Chyba byłoby łatwiej zapamiętać (lub może wybór języka)
 
 See the [open issues](https://github.com/SuperrMurlocc/InformatykaBocik/issues) for a full list of proposed features (and known issues).
 
