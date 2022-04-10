@@ -144,16 +144,19 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
   ```
 
 	* Instalator pakietów [`pip`](https://www.odoo.com/forum/help-1/how-to-install-pip-in-python-3-on-ubuntu-18-04-167715)
+
 	```sh
 	pip3 --version
 	```
 
 * `discord.py` - API Discorda
+
 	```sh
 	pip install discord.py
 	```
 
 * `dotenv`
+
 	```sh
 	pip install dotenv
 	```
@@ -168,14 +171,44 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 
 4. Przejdź do zakładki **OAuth2** &rarr; **URL Generator** oraz zaznacz opcję **bot**
 
-5. Zaznacz odpowiednie permisje
-![image info e.g. Alt](img/permissions.png)
+5. Zaznacz odpowiednie permisje 
+	
+	![image info e.g. Alt](img/permissions.png)
 
 6. Skopiuj **Invite Link**
 
 7. Wróć do zakładki **Bot** a następnie zaznacz opcje w **Privileged Gateway Intents** (PRESENCE INTENT, SERVER MEMBERS INTENT oraz MESSAGE CONTENT INTENT) ✅
 
 8. Zaproś bota na swój serwer za pomocą **Invite Link**
+
+### Uruchomienie bota
+
+- Sklonuj to repozytorium za pomocą komendy
+
+	```sh
+	git clone https://github.com/SuperrMurlocc/InformatykaBocik
+	```
+
+- W pliku `src/secrets.py` zmodyfikuj
+
+	```
+    # _SECRETS['TOKEN'] = str(os.getenv('DISCORD_TOKEN'))
+	```
+
+	na
+
+	```
+	_SECRETS['TOKEN'] = "twój.token.Discord"
+	```
+	gdzie `twój.token.Discord` to **Token** utworzony w poprzednim kroku
+
+- Uruchom bota za pomocą
+
+	```sh
+	python main.py
+	```
+
+	**Gotowe** 🎉
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
