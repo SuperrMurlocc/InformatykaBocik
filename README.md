@@ -215,9 +215,9 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 <!-- SUGESTIE -->
 ## Sugestie
 
-- [ ] Ankiety:
-	- [ ] Implementacja maksymalnej liczby odpowiedzi w ankiecie
-	- [ ] Dynamiczne słupki postępu
+- [X] Ankiety:
+	- [X] Implementacja maksymalnej liczby odpowiedzi w ankiecie
+	- [X] Dynamiczne słupki postępu
 - [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [ ] Komenda do przesyłania sugestii
