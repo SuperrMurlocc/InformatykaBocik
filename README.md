@@ -174,11 +174,11 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	```
 
 - Stwórz plik `.env` i umieść w nim
-	> *UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
+	> **UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
 	
 	```
 	# .env
-	CORD_TOKEN = "twój.token.Discord"
+	DISCORD_TOKEN = "twój.token.Discord"
 	```
 	gdzie `twój.token.Discord` to **Token** utworzony w poprzednim kroku
 
@@ -201,11 +201,11 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 ### **Ankiety**
 
 tak / nie 
-```sh
+```
 $ynpoll Przykładowe pytanie?
 ```
 wiele odp.
-```sh
+```
 $mopoll co lubicie bardziej? & krewetki | banany & 1
 ```
 
