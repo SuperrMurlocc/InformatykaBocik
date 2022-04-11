@@ -5,14 +5,10 @@ from discord.ext import commands
 from src.keep_alive import keep_alive
 from src.secrets import load_secrets, get_secret
 
-from datetime import date
-
-import logging
-from src.format import JSONFormatter
-
-# Creates debug .json file containing all managed events 
-DEBUG_MODE = True
-LOG_PATH = 'log/'
+# Creates debug .json file containing all managed webbooks
+LOGGING_MODE = True
+if LOGGING_MODE:
+	from src.logger import *
 
 load_secrets()
 TOKEN = get_secret('TOKEN')
@@ -40,8 +36,8 @@ async def on_ready():
 			print(f'- {member.name}')
 	
 		# Create logging directory
-		if DEBUG_MODE: # Create logging directory
-			configure_logging();
+		if LOGGING_MODE: # Create logging directory
+			configure_logging()
 
 	
 	await client.change_presence(activity=discord.Game("On Host"))
@@ -74,29 +70,6 @@ async def on_error(event, *args):
 			f.write(f'Unhandled message: {args[0]}\n')
 		else:
 			raise
-
-def configure_logging():
-	if not os.path.exists(LOG_PATH):
-		os.makedirs(LOG_PATH)
-		print(f"Created {LOG_PATH} directory")
-
-	sessionID = date.today().strftime("%d-%m-%Y-") + str(os.getpid()) + '.json'
-	
-	name = LOG_PATH + 'log-' + sessionID
-	logger = logging.getLogger('discord')
-	logger.setLevel(logging.DEBUG)
-	logger.addFilter(NoParsingFilter())
-	handler = logging.FileHandler(filename=name, encoding='utf-8', mode='w')
-	handler.setFormatter(JSONFormatter())
-	logger.addHandler(handler)
-	
-
-class NoParsingFilter(logging.Filter):
-	# TODO: Fix this filter to only display relevant messages
-    def filter(self, record):
-        return record.getMessage().contains('WebSocket Event') or record.getMessage().startsWith('POST')
-
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # #                     M O D U L E S                   # # # # # # # # # # # # # # # # #

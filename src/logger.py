@@ -1,6 +1,10 @@
 import json
 import logging
+import os
 from collections import OrderedDict
+from datetime import date
+
+LOG_PATH = 'log/'
 
 py_to_JSON = OrderedDict([
 	("'", '"'),
@@ -13,6 +17,27 @@ def replace_all(text, dic):
     for i, j in dic.items():
         text = text.replace(i, j)
     return text
+
+def configure_logging():
+	if not os.path.exists(LOG_PATH):
+		os.makedirs(LOG_PATH)
+		print(f"Created {LOG_PATH} directory")
+
+	sessionID = date.today().strftime("%d-%m-%Y-") + str(os.getpid()) + '.json'
+	
+	name = LOG_PATH + 'log-' + sessionID
+	logger = logging.getLogger('discord')
+	logger.setLevel(logging.DEBUG)
+	logger.addFilter(NoParsingFilter())
+	handler = logging.FileHandler(filename=name, encoding='utf-8', mode='w')
+	handler.setFormatter(JSONFormatter())
+	logger.addHandler(handler)
+	
+
+class NoParsingFilter(logging.Filter):
+	# TODO: Fix this filter to only display relevant messages
+    def filter(self, record):
+        return record.getMessage().contains('WebSocket Event') or record.getMessage().startsWith('POST')
 
 class JSONFormatter(logging.Formatter):
 	def __init__(self):

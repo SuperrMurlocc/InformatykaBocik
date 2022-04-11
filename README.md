@@ -90,6 +90,7 @@ Katalogi:
             - Komendy pomocnicze dla developerów.
         - **polls.py**:
             - Moduł odpowiedzialny za tworzenie ankiet.
+	- **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki
 - **templates**:
     - templatki pomocnicze
 
@@ -121,19 +122,19 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	pip3 --version
 	```
 
-* `discord.py` - API Discorda
+	* `discord.py` - API Discorda
 
-	```sh
-	pip3 install discord.py
-	```
+		```sh
+		pip3 install discord.py
+		```
 
-* `dotenv`
+	* `dotenv`
 
-	```sh
-	pip3 install python-dotenv
-	```
+		```sh
+		pip3 install python-dotenv
+		```
 
-### Tworzenie klucza API
+### **Tworzenie klucza API**
 
 1. Stwórz nową aplikację [https://discord.com/developers/applications/](https://discord.com/developers/applications/)
 
@@ -144,23 +145,24 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 4. Przejdź do zakładki **OAuth2** &rarr; **URL Generator** oraz zaznacz opcję **bot**
 
 5. Zaznacz odpowiednie permisje 
-	
-<img src="res/img/permissions.png" width="300">
 
+<div align="center">
+	<img src="res/img/permissions.png" width="549"></img>
+	<br><br>
+</div>
 6. Skopiuj **Invite Link**
 
 7. Wróć do zakładki **Bot** a następnie zaznacz opcje w **Privileged Gateway Intents** (PRESENCE INTENT, SERVER MEMBERS INTENT oraz MESSAGE CONTENT INTENT) ✅
 
 8. Zaproś bota na swój serwer za pomocą **Invite Link**
 
-### Uruchomienie bota
+### **Uruchomienie bota**
 
 - Sklonuj to repozytorium za pomocą komendy
 
 	```sh
 	git clone https://github.com/SuperrMurlocc/InformatykaBocik
 	```
-
 
 - Stwórz plik `.env` i umieść w nim
 	> *UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
@@ -178,26 +180,28 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	python3 main.py
 	```
 	
-	**Gotowe** 🎉
+	&rarr; Gotowe 🎉
 
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
+
 
 <!-- KOMENDY -->
 ## Komendy
 
-### Ankiety
+### **Ankiety**
 
 tak / nie 
-```
+```sh
 $ynpoll Przykładowe pytanie?
 ```
 wiele odp.
-```
+```sh
 $mopoll co lubicie bardziej? & krewetki | banany & 1
 ```
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
+
 
 <!-- SUGESTIE -->
 ## Sugestie
@@ -212,6 +216,7 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 - [ ] Podpięcie Bota do serwera INF WEEIA
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
+
 
 <!-- KONTRYBUCJA -->
 ## Kontrybucja
