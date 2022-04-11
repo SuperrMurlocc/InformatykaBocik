@@ -87,7 +87,7 @@ Katalogi:
 		    - Komendy pomocnicze dla developerów.
 		- **polls.py**:
 		    - Moduł odpowiedzialny za tworzenie ankiet.
-		- **info**:
+		- **info.py**:
 		    - Podaje najważniejsze info o bocie
     - **helpers**:
     	> Pliki pomocnicze 
