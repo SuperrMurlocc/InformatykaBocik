@@ -64,7 +64,7 @@ class Polls(commands.Cog):
 
         options = list(set(options.split("|")))
         for option in options:
-            poll.add_field(name=f"{number_emojis[options.index(option) + 1]}", value=option, inline=True)
+            poll.add_field(name=f"\u200b", value=f"{number_emojis[options.index(option) + 1]} {option}", inline=False)
         if max_votes:
             poll.set_footer(text=f"Głosujemy maksymalnie {max_votes} raz{'y' if max_votes > 1 else ''}!")
 

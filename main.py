@@ -2,9 +2,10 @@ import os
 import discord
 from discord.ext import commands
 
-from src.helpers.keep_alive import keep_alive
 from src.helpers.secrets import load_secrets, get_secret
-from src.helpers.reactions import limit_max_votes
+from src.helpers.reactions import limit_votes, progress_bar, is_ankieta
+from res.misc import number_emojis
+
 
 # Creates debug .json file containing all managed webbooks
 LOGGING_MODE = True
@@ -61,7 +62,12 @@ async def on_reaction_add(reaction, user):
     if reaction.message.author.name != "ZajebistyBot":
         return
 
-    await limit_max_votes(reaction, user)
+    if is_ankieta(reaction):
+        if reaction.emoji not in list(number_emojis.values()) + ['👍', '👎']:
+            await reaction.remove(user)
+            return
+        await limit_votes(reaction, user)
+        await progress_bar(reaction)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
