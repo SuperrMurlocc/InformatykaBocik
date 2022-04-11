@@ -81,20 +81,21 @@ Katalogi:
     - zasoby
 - **<span style="color:IndianRed">./src/</span>**
     - **cogs**:
-        > Każdy **cog** jest „modułem” czyli **zestawem komend**  
-        Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
-        - **dev.py**:
-            - Komendy pomocnicze dla developerów.
-        - **polls.py**:
-            - Moduł odpowiedzialny za tworzenie ankiet.
-        - **info**:
-            - Podaje najważniejsze info o bocie
+    	> Każdy **cog** jest „modułem” czyli **zestawem komend**  
+	Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
+		- **dev.py**:
+		    - Komendy pomocnicze dla developerów.
+		- **polls.py**:
+		    - Moduł odpowiedzialny za tworzenie ankiet.
+		- **info**:
+		    - Podaje najważniejsze info o bocie
     - **helpers**:
-      - Pliki pomocnicze 
-      - **keep_alive.py** do podtrzymywania repla;
-      - **checks.py** ograniczenia komend (np tylko dla administratorów itd);
-      - **secrets.py** czyli banalna obsługa sekretów;
-      - **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki
+    	> Pliki pomocnicze 
+		- **keep_alive.py** do podtrzymywania repla;
+		- **checks.py** ograniczenia komend (np tylko dla administratorów itd);
+		- **reactions.py** obsługa reakcji;
+		- **secrets.py** czyli banalna obsługa sekretów;
+		- **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki.
 - **<span style="color:RoyalBlue">./templates/</span>**
     - templatki pomocnicze
 
