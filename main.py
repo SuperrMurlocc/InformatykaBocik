@@ -7,16 +7,19 @@ from src.helpers.secrets import load_secrets, get_secret
 from src.helpers.reactions import limit_max_votes
 
 # Creates debug .json file containing all managed webbooks
-LOGGING_MODE = True
+LOGGING_MODE = False
 if LOGGING_MODE:
     from src.helpers.logger import *
+PREFIX = "$"
 
 load_secrets()
 TOKEN = get_secret('TOKEN')
 
 intents = discord.Intents.default()
 intents.members = True
-client = commands.Bot(command_prefix="$", intents=intents)
+activity_name = f'{PREFIX}help'
+activity = discord.Activity(type=discord.ActivityType.listening, name=activity_name)
+client = commands.Bot(command_prefix=PREFIX, activity=activity, intents=intents)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -40,7 +43,8 @@ async def on_ready():
         if LOGGING_MODE:  # Create logging directory
             configure_logging()
 
-    await client.change_presence(activity=discord.Game("On Host"))
+    # Setting `Listening ` status
+			
 
 
 @client.event

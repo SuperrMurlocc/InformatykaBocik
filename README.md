@@ -218,7 +218,10 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 - [ ] Ankiety:
 	- [ ] Implementacja maksymalnej liczby odpowiedzi w ankiecie
 	- [ ] Dynamiczne słupki postępu
-- [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
+- [ ] **Ładna dokumentacja czyli na `$help {komenda}` jak się danej komendy używa**
+- [ ] Liczenie:
+	- [x] Dodawanie kanału
+	- [ ] Reagowanie na wiadomości w obrębie tego kanału
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [ ] Aliasy do komend w języku polskim
 - [ ] Podpięcie Bota do serwera INF WEEIA

@@ -8,22 +8,18 @@ class info(commands.Cog):
 	def __init__(self, client):
 		self.client = client
 
-	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-	# # # # # # # # # # # # # # # #                     H E L P E R S                   # # # # # # # # # # # # # # # #
-	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+	# Helpers
+	@staticmethod
+	def console(msg):
+		print(f'[INFO] (cog)\t: {msg}')
 
-	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-	# # # # # # # # # # # # # # # #                      E V E N T S                    # # # # # # # # # # # # # # # #
-	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+	# Events
 	@commands.Cog.listener()
 	async def on_ready(self):
-		print(f'[{info.__name__}]\t::\tis ready.')
-		
+		self.console('is ready')
 
-	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-	# # # # # # # # # # # # # # # #                    C O M M A N D S                  # # # # # # # # # # # # # # # #
-	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-	@commands.command(brief="Krótki opis", aliases=["test1", "test2"])
+	# Commands
+	@commands.command(brief="Zwraza podstawowe informacje o bocie", aliases=["informacje", "information", "aboutme"])
 	async def info(self, ctx):
 		await ctx.message.delete() # Delete user message
 		
@@ -40,7 +36,7 @@ class info(commands.Cog):
 		
 		message.add_field(name='GitHub', value=field)
 		
-		message.add_field(name='Informacje o serwerze', value=f'{platform.system()}\n{platform.release()}{platform.architecture()[0]}\nPython {platform.python_version()}')
+		message.add_field(name='Informacje o serwerze', value=f'{platform.system()}\n{platform.release()}{platform.architecture()[0]}\nPython {platform.python_version()}\ndiscord.py {discord.__version__}')
 
 		message.set_footer(text=f'utworzono na prośbę {ctx.author.display_name}', icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=message)
