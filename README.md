@@ -77,21 +77,30 @@
 
 Katalogi:
 
-- **res**:
+- **<span style="color:SeaGreen">./res/</span>**
     - zasoby
-- **src**:
+
+- **<span style="color:IndianRed">./src/</span>**
+
     - **keep_alive.py** do podtrzymywania repla;
     - **checks.py** ograniczenia komend (np tylko dla administratorów itd);
     - **secrets.py** czyli banalna obsługa sekretów;
     - **cogs**:
-        - każdy cog jest „modułem” czyli zestawem komend;
-        - Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
         - **dev**:
-            - Komendy pomocnicze dla developerów.
-        - **polls.py**:
-            - Moduł odpowiedzialny za tworzenie ankiet.
+            - Komendy pomocnicze dla developerów
+        - **polls**:
+            - Moduł odpowiedzialny za tworzenie ankiet
+        - **info**:
+            - Podaje najważniejsze info o bocie
+
+		<br>
+
+		>każdy **cog** jest „modułem” czyli **zestawem komend**
+		> Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
+
 	- **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki
-- **templates**:
+
+- **<span style="color:RoyalBlue">./templates/</span>**
     - templatki pomocnicze
 
 
@@ -211,9 +220,9 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 	- [ ] Dynamiczne słupki postępu
 - [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
-- [ ] Komenda do przesyłania sugestii
 - [ ] Aliasy do komend w języku polskim
 - [ ] Podpięcie Bota do serwera INF WEEIA
+- [ ] Komenda do przesyłania sugestii (dodać do **info.py**)
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
