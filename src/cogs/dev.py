@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from src.checks import check_guild
+from src.helpers.checks import check_guild
 
 
 class Dev(commands.Cog):

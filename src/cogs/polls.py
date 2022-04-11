@@ -73,8 +73,6 @@ class Polls(commands.Cog):
         for option in options:
             await poll_message.add_reaction(f"{number_emojis[options.index(option) + 1]}")
 
-        print(poll_message.embeds[0].to_dict())
-
 
 def setup(client):
     client.add_cog(Polls(client))

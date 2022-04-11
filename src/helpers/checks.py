@@ -1,4 +1,4 @@
-from src.secrets import get_secret
+from src.helpers.secrets import get_secret
 
 
 def check_guild(ctx) -> bool:
