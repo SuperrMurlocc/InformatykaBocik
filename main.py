@@ -57,9 +57,9 @@ async def on_member_join(member):
 
 @client.event
 async def on_reaction_add(reaction, user):
-    if user.name == "ZajebistyBot":
+    if user.name == "WEEIA Bot":
         return
-    if reaction.message.author.name != "ZajebistyBot":
+    if reaction.message.author.name != "WEEIA Bot":
         return
 
     if is_ankieta(reaction):

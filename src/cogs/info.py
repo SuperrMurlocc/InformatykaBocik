@@ -4,7 +4,8 @@ from res.links import urls
 
 import platform
 
-class info(commands.Cog):
+
+class Info(commands.Cog):
 	def __init__(self, client):
 		self.client = client
 
@@ -17,8 +18,7 @@ class info(commands.Cog):
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	@commands.Cog.listener()
 	async def on_ready(self):
-		print(f'[{info.__name__}]\t::\tis ready.')
-		
+		print(f'Cog {self} is ready.')
 
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # #                    C O M M A N D S                  # # # # # # # # # # # # # # # #
@@ -47,4 +47,4 @@ class info(commands.Cog):
 
 
 def setup(client):
-	client.add_cog(info(client))
+	client.add_cog(Info(client))
