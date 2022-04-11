@@ -77,31 +77,31 @@
 
 Katalogi:
 
-- **<span style="color:SeaGreen">./res/</span>**
+- **./res/**:
     - zasoby
-
 - **<span style="color:IndianRed">./src/</span>**
-
-    - **keep_alive.py** do podtrzymywania repla;
-    - **checks.py** ograniczenia komend (np tylko dla administratorów itd);
-    - **secrets.py** czyli banalna obsługa sekretów;
     - **cogs**:
-        - **dev**:
-            - Komendy pomocnicze dla developerów
-        - **polls**:
-            - Moduł odpowiedzialny za tworzenie ankiet
-        - **info**:
-            - Podaje najważniejsze info o bocie
-
-		<br>
-
-		>każdy **cog** jest „modułem” czyli **zestawem komend**
-		> Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
-
-	- **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki
-
+    	> Każdy **cog** jest „modułem” czyli **zestawem komend**  
+	Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
+		- **dev.py**:
+		    - Komendy pomocnicze dla developerów.
+		- **polls.py**:
+		    - Moduł odpowiedzialny za tworzenie ankiet.
+		- **info.py**:
+		    - Podaje najważniejsze info o bocie
+    - **helpers**:
+    	> Pliki pomocnicze 
+		- **keep_alive.py** do podtrzymywania repla;
+		- **checks.py** ograniczenia komend (np tylko dla administratorów itd);
+		- **reactions.py** obsługa reakcji;
+		- **secrets.py** czyli banalna obsługa sekretów;
+		- **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki.
 - **<span style="color:RoyalBlue">./templates/</span>**
     - templatki pomocnicze
+
+<br>
+
+
 
 
 ### Zbudowane przy pomocy
@@ -174,11 +174,11 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	```
 
 - Stwórz plik `.env` i umieść w nim
-	> *UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
+	> **UWAGA**: Zrób to tylko jeśli odpalasz Bota lokalnie. Jeśli wykorzystujesz hosting, np. replit, umieść swój **Token** w zakładce **Secrets** pod nazwą `DISCORD_TOKEN`
 	
 	```
 	# .env
-	CORD_TOKEN = "twój.token.Discord"
+	DISCORD_TOKEN = "twój.token.Discord"
 	```
 	gdzie `twój.token.Discord` to **Token** utworzony w poprzednim kroku
 
@@ -201,11 +201,11 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 ### **Ankiety**
 
 tak / nie 
-```sh
+```
 $ynpoll Przykładowe pytanie?
 ```
 wiele odp.
-```sh
+```
 $mopoll co lubicie bardziej? & krewetki | banany & 1
 ```
 
@@ -215,18 +215,23 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 <!-- SUGESTIE -->
 ## Sugestie
 
-- [ ] Ankiety:
-	- [ ] Implementacja maksymalnej liczby odpowiedzi w ankiecie
-	- [ ] Dynamiczne słupki postępu
+### 👌 Do zrobienia
+
 - [ ] **Ładna dokumentacja czyli na `$help {komenda}` jak się danej komendy używa**
 - [ ] Liczenie:
 	- [x] Dodawanie kanału
 	- [ ] Reagowanie na wiadomości w obrębie tego kanału
+- [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
+- [ ] Komenda do przesyłania sugestii
 - [ ] Aliasy do komend w języku polskim
 - [ ] Podpięcie Bota do serwera INF WEEIA
-- [ ] Komenda do przesyłania sugestii (dodać do **info.py**)
 
+### 💙 Zakończone
+
+- [X] Ankiety:
+	- [X] Implementacja maksymalnej liczby odpowiedzi w ankiecie
+	- [X] Dynamiczne słupki postępu
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 
