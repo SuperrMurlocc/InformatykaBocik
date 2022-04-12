@@ -218,9 +218,10 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 ### 👌 Do zrobienia
 
 - [ ] **Ładna dokumentacja czyli na `$help {komenda}` jak się danej komendy używa**
-- [ ] Liczenie:
+- [x] Liczenie:
 	- [x] Dodawanie kanału
-	- [ ] Reagowanie na wiadomości w obrębie tego kanału
+	- [x] Reagowanie na wiadomości w obrębie tego kanału
+	- [ ] Przypinanie co `x` wiadomosci
 - [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
 - [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [ ] Komenda do przesyłania sugestii
