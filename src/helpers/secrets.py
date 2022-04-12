@@ -13,6 +13,7 @@ def load_secrets() -> None:
 
     _SECRETS['TOKEN'] = str(os.getenv('DISCORD_TOKEN'))
     _SECRETS['GUILD'] = str(os.getenv('INFORMATYKA_GUILD_ID'))
+    _SECRETS['DEEPL'] = str(os.getenv('DEEPL_AUTH_KEY'))
 
 
 def get_secret(secret: str) -> str | None:
