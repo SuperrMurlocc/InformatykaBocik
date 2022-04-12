@@ -109,6 +109,8 @@ Katalogi:
 * [Python 3](https://www.python.org/)
 * [Discord.py](https://discordpy.readthedocs.io/en/stable/index.html)
 * [replit.com](https://replit.com/~)
+* [Numbers API](http://numbersapi.com/)
+* [DeepL Translator](https://www.deepl.com/translator)
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
@@ -218,21 +220,21 @@ $mopoll co lubicie bardziej? & krewetki | banany & 1
 ### 👌 Do zrobienia
 
 - [ ] **Ładna dokumentacja czyli na `$help {komenda}` jak się danej komendy używa**
-- [x] Liczenie:
-	- [x] Dodawanie kanału
-	- [x] Reagowanie na wiadomości w obrębie tego kanału
-	- [ ] Przypinanie co `x` wiadomosci
-- [ ] Dokumentacja czyli na `$help {komenda}` jak się danej komendy używa
-- [ ] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [ ] Komenda do przesyłania sugestii
 - [ ] Aliasy do komend w języku polskim
 - [ ] Podpięcie Bota do serwera INF WEEIA
 
 ### 💙 Zakończone
 
+- [x] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [X] Ankiety:
 	- [X] Implementacja maksymalnej liczby odpowiedzi w ankiecie
 	- [X] Dynamiczne słupki postępu
+- [x] Liczenie:
+	- [x] Dodawanie kanału
+	- [x] Reagowanie na wiadomości w obrębie tego kanału
+
+
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 

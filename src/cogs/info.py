@@ -37,7 +37,7 @@ class Info(commands.Cog):
 		
 		message.add_field(name='GitHub', value=field)
 		
-		message.add_field(name='Informacje o serwerze', value=f'{platform.system()}\n{platform.release()}{platform.architecture()[0]}\nPython {platform.python_version()}\ndiscord.py {discord.__version__}')
+		message.add_field(name='Informacje o serwerze', value=f'{platform.system()}\n{platform.release()}{platform.architecture()[0]}\nPython {platform.python_version()}\ndiscord.py {discord.__version__}', inline=False)
 
 		message.set_footer(text=f'utworzono na prośbę {ctx.author.display_name}', icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=message)
