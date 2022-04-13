@@ -11,8 +11,8 @@ class Info(commands.Cog):
 
 	# Helpers
 	@staticmethod
-	def console(msg):
-		print(f'[INFO] (cog)\t: {msg}')
+	def console(msg, who='cog'):
+		print(f'[INFO] ({who})\t: {msg}')
 
 	# Events
 	@commands.Cog.listener()

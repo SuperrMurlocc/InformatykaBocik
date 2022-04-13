@@ -202,31 +202,69 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 
 ### **Ankiety**
 
-tak / nie 
+ankieta na **tak** lub **nie**
 ```
-$ynpoll Przykładowe pytanie?
+$ynpoll 'pytanie'
 ```
-wiele odp.
+ankieta z wieloma możliwymi odpowiedziami
 ```
-$mopoll co lubicie bardziej? & krewetki | banany & 1
+$mopoll 'pytanie' & 'odp. 1' | 'odp. 2' & MAXVOTES
 ```
+> `MAXVOTES` to maksymalna liczba głosów jaką może oddać jedna osoba
+### **Liczenie**
+
+ustawienie kanału
+```
+$liczenie <nazwa kanału>
+```
+odpięcie kanału
+```
+$odepnij <nazwa kanału>
+```
+ustawienie aktualnej liczby
+```
+$ustawliczbe liczba
+```
+
+### **Informacje**
+
+zwraca podstawowe informacje o bocie
+```
+$info
+```
+
+### **Losowanie**
+
+losuje jedną osobę w obrębie danej grupy
+```
+$losuj 'nazwa grupy'
+```
+
+### **Sugestie**
+
+zgłasza sugestie na temat działania bota do administacji
+```
+$sugestia 'treść'
+```
+
+> Komendy, by można było łatwiej je zapamiętać, mają nadane kilka różnych nazw. Wszystkie z nich **działają dokładnie tak samo**. Przykładowo zamiast `$sugestia` możemy napisać `$sugg`. Aby sprawdzić możliwe aliasy dla danej komendy wpisz `$help <komenda>`.
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 
 <!-- SUGESTIE -->
-## Sugestie
+## Do zrobienia
 
-### 👌 Do zrobienia
+### 👌 Aktualne prace
 
 - [ ] **Ładna dokumentacja czyli na `$help {komenda}` jak się danej komendy używa**
-- [ ] Komenda do przesyłania sugestii
 - [ ] Aliasy do komend w języku polskim
 - [ ] Podpięcie Bota do serwera INF WEEIA
 
 ### 💙 Zakończone
 
-- [x] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
+- [X] Komenda do przesyłania sugestii
+- [X] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [X] Ankiety:
 	- [X] Implementacja maksymalnej liczby odpowiedzi w ankiecie
 	- [X] Dynamiczne słupki postępu
