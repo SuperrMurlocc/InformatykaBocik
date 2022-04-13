@@ -44,10 +44,8 @@ async def on_ready():
         if LOGGING_MODE:  # Create logging directory
             configure_logging()
 
-    # Setting `Listening ` status
-			
 
-
+# Setting `Listening ` status
 @client.event
 async def on_member_join(member):
     channel_to_welcome = discord.utils.get(member.guild.channels, id="?")
