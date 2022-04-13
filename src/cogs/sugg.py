@@ -40,7 +40,7 @@ class NewCog(commands.Cog):
         	# Create suggestions channel
 			ch = await ctx.guild.create_text_channel(self.CHANNEL_NAME)
 			await ctx.channel.send('Utworzono kanał do wysyłania sugestii')
-			self.console('Created {self.CHANNEL_NAME} suggestions channel', ctx.message.author.display_name)
+			self.console(f'Created {self.CHANNEL_NAME} suggestions channel', ctx.message.author.display_name)
 
 		id = str(self.random_with_N_digits(self.ID_LENGTH))
 		embd = discord.Embed(title=f"Sugestia # {id}", description=stringToParse, color=discord.Color.random())
