@@ -6,6 +6,9 @@ from res.misc import number_emojis
 
 
 class Polls(commands.Cog):
+	description = 'Automatyczne tworzenie ankiet' # Required field
+	qualified_name = "Ankiety"
+	
 	def __init__(self, client):
 		self.client = client
 
@@ -34,14 +37,14 @@ class Polls(commands.Cog):
 
 	@staticmethod
 	def console(msg, who='cog'):
-		print(f'[SUGG] ({who})\t: {msg}')
+		print(f'[{__class__.__name__}] ({who})\t: {msg}')
 
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # #                      E V E N T S                    # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	@commands.Cog.listener()
 	async def on_ready(self):
-		print(f'Cog {self} is ready.')
+		self.console('is ready')
 
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # #                    C O M M A N D S                  # # # # # # # # # # # # # # # #

@@ -79,30 +79,42 @@ Katalogi:
 
 - **./res/**:
     - zasoby
-- **<span style="color:IndianRed">./src/</span>**
+
+- **./src/**
     - **cogs**:
     	> Każdy **cog** jest „modułem” czyli **zestawem komend**  
 	Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
+		- **count.py**:
+		    - Liczenie od 1 w górę
 		- **dev.py**:
-		    - Komendy pomocnicze dla developerów.
-		- **polls.py**:
-		    - Moduł odpowiedzialny za tworzenie ankiet.
+		    - Komendy pomocnicze dla developerów
 		- **info.py**:
 		    - Podaje najważniejsze info o bocie
+		- **pick.py**:
+		    - Wybiera jedną osobę w obrębie danej roli
+		- **polls.py**:
+		    - Moduł odpowiedzialny za tworzenie ankiet
+		- **sugg.py**:
+		    - Umożliwia wysyłanie wiadomości do deweloperów
     - **helpers**:
     	> Pliki pomocnicze 
-		- **keep_alive.py** do podtrzymywania repla;
-		- **checks.py** ograniczenia komend (np tylko dla administratorów itd);
-		- **reactions.py** obsługa reakcji;
-		- **secrets.py** czyli banalna obsługa sekretów;
-		- **logger.py** jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki.
-- **<span style="color:RoyalBlue">./templates/</span>**
+		- **checks.py**
+			-  ograniczenia komend (np tylko dla administratorów itd)
+		- **customhelp.py**
+			-  customizacja komendy help
+		- **keep_alive.py**
+			-  do podtrzymywania repla
+		- **logger.py**
+			-  jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki
+		- **reactions.py**
+			-  obsługa reakcji
+		- **secrets.py**
+			-  czyli banalna obsługa sekretów
+
+- **./templates/**
     - templatki pomocnicze
 
 <br>
-
-
-
 
 ### Zbudowane przy pomocy
 
@@ -161,6 +173,7 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 	<img src="res/img/permissions.png" width="549"></img>
 	<br><br>
 </div>
+
 6. Skopiuj **Invite Link**
 
 7. Wróć do zakładki **Bot** a następnie zaznacz opcje w **Privileged Gateway Intents** (PRESENCE INTENT, SERVER MEMBERS INTENT oraz MESSAGE CONTENT INTENT) ✅
@@ -200,52 +213,11 @@ Na początek upewnij się, że posiadasz wszystkie wymagane do działania bota n
 <!-- KOMENDY -->
 ## Komendy
 
-### **Ankiety**
-
-ankieta na **tak** lub **nie**
+Aby zobaczyć listę załadowanych modułów oraz komend w nich dostępnych użyj komendy
 ```
-$ynpoll 'pytanie'
-```
-ankieta z wieloma możliwymi odpowiedziami
-```
-$mopoll 'pytanie' & 'odp. 1' | 'odp. 2' & MAXVOTES
-```
-> `MAXVOTES` to maksymalna liczba głosów jaką może oddać jedna osoba
-### **Liczenie**
-
-ustawienie kanału
-```
-$liczenie <nazwa kanału>
-```
-odpięcie kanału
-```
-$odepnij <nazwa kanału>
-```
-ustawienie aktualnej liczby
-```
-$ustawliczbe liczba
+$help
 ```
 
-### **Informacje**
-
-zwraca podstawowe informacje o bocie
-```
-$info
-```
-
-### **Losowanie**
-
-losuje jedną osobę w obrębie danej grupy
-```
-$losuj 'nazwa grupy'
-```
-
-### **Sugestie**
-
-zgłasza sugestie na temat działania bota do administacji
-```
-$sugestia 'treść'
-```
 
 > Komendy, by można było łatwiej je zapamiętać, mają nadane kilka różnych nazw. Wszystkie z nich **działają dokładnie tak samo**. Przykładowo zamiast `$sugestia` możemy napisać `$sugg`. Aby sprawdzić możliwe aliasy dla danej komendy wpisz `$help <komenda>`.
 
@@ -257,8 +229,10 @@ $sugestia 'treść'
 
 ### 👌 Aktualne prace
 
-- [ ] **Ładna dokumentacja czyli na `$help {komenda}` jak się danej komendy używa**
-- [ ] Aliasy do komend w języku polskim
+- [ ] **Ładna dokumentacja komend**
+	- [x] Customowa wersja komendy help
+	- [ ] Customowa wersja komendy help {komenda}
+- [ ] Łatwe do zapamiętania aliasy do komend w języku polskim i angielskim
 - [ ] Podpięcie Bota do serwera INF WEEIA
 
 ### 💙 Zakończone
@@ -282,11 +256,19 @@ $sugestia 'treść'
 Jeśli masz jakieś sugestie, które jesteś w stanie sam zaimplementować, zforkuj to repozytorium i stwórz pull requesta.
 Zadbaj proszę o czysty kod, korzystaj z gotowych templatów w katalogu **templates** oraz zachowaj już istniejący styl.
 
-1. Zforkuj projekt
-2. Stwórz branch dla swojego feature'a (`git checkout -b feature/AmazingFeature`)
-3. Zcommituj swoje zmiany (`git commit -m 'Add some AmazingFeature'`)
-4. Dokonaj pusha (`git push origin feature/AmazingFeature`)
-5. Otwórz pull request
+1. Utwórz własnego **forka** tego repozytorium
+2. Stwórz **branch** dla funkcjonalności, którą chcesz zaimplementować
+```
+`git checkout -b feature/AmazingFeature`
+```
+3. Gdy feature będzie gotowy, **wyślij swój kod** na brancha w repozytorium 
+```
+`git commit -m 'Add some AmazingFeature'`
+```
+```
+`git push origin feature/AmazingFeature`
+```
+5. Otwórz [**pull request**](https://github.com/SuperrMurlocc/InformatykaBocik/pulls)
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
@@ -294,14 +276,13 @@ Zadbaj proszę o czysty kod, korzystaj z gotowych templatów w katalogu **templa
 <!-- KONTAKT -->
 ## Kontakt
 
-W razie pytań piszcie do twórców, znajdziecie ich w zakładce Contributors. A w przypadku sugestii i błędów zapraszamy do otwarcia **Issue**.
-Link do projektu: [https://github.com/SuperrMurlocc/InformatykaBocik](https://github.com/SuperrMurlocc/InformatykaBocik)
+W razie pytań piszcie do twórców, znajdziecie ich w zakładce Contributors. A w przypadku sugestii i błędów zapraszamy do otwarcia [**Issue**](https://github.com/SuperrMurlocc/InformatykaBocik/issues).
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 
 
-<!-- UZNANIA -->
-## Uznania
+<!-- Podziękownia -->
+## Podziękowania
 
 * [.README Template](https://github.com/othneildrew/Best-README-Template)
 
@@ -319,3 +300,7 @@ Link do projektu: [https://github.com/SuperrMurlocc/InformatykaBocik](https://gi
 [issues-shield]: https://img.shields.io/github/issues/SuperrMurlocc/InformatykaBocik.svg?style=for-the-badge
 [issues-url]: https://github.com/SuperrMurlocc/InformatykaBocik/issues
 [product-screenshot]: res/img/screenshot.png
+
+*Made with ♥ by*<br>
+*[Jakub Bednarski](https://github.com/SuperrMurlocc)*<br>
+*[Mateusz Duda](https://github.com/matiduda)*

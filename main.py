@@ -4,8 +4,9 @@ from discord.ext import commands
 
 from src.helpers.secrets import load_secrets, get_secret
 from src.helpers.reactions import limit_votes, progress_bar, is_ankieta
+from src.helpers.customhelp import CustomHelpCommand
+from src.helpers.keep_alive import keep_alive
 from res.misc import number_emojis
-
 
 # Creates debug .json file containing all managed webbooks
 LOGGING_MODE = False
@@ -20,7 +21,8 @@ intents = discord.Intents.default()
 intents.members = True
 activity_name = f'{PREFIX}help'
 activity = discord.Activity(type=discord.ActivityType.listening, name=activity_name)
-client = commands.Bot(command_prefix=PREFIX, activity=activity, intents=intents)
+
+client = commands.Bot(command_prefix=PREFIX, help_command=CustomHelpCommand(),activity=activity, intents=intents)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -44,8 +46,10 @@ async def on_ready():
         if LOGGING_MODE:  # Create logging directory
             configure_logging()
 
+    # Setting `Listening ` status
+			
 
-# Setting `Listening ` status
+
 @client.event
 async def on_member_join(member):
     channel_to_welcome = discord.utils.get(member.guild.channels, id="?")
@@ -120,5 +124,5 @@ for filename in os.listdir("./src/cogs"):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # #                          R U N                      # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# keep_alive()
+keep_alive()
 client.run(TOKEN)

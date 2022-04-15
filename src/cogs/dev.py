@@ -4,6 +4,10 @@ from src.helpers.checks import check_guild
 
 
 class Dev(commands.Cog):
+	description = 'Komendy dla deweloperów bota' # Required field
+	qualified_name = "Developer"
+
+	
 	def __init__(self, client):
 		self.client = client
 
@@ -12,14 +16,13 @@ class Dev(commands.Cog):
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	@staticmethod
 	def console(msg, who='cog'):
-		print(f'[DEV] ({who})\t: {msg}')
-
+		print(f'[{__class__.__name__}] ({who})\t: {msg}')
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # #                      E V E N T S                    # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	@commands.Cog.listener()
 	async def on_ready(self):
-		print(f'Cog {self} is ready.')
+		self.console('is ready')
 
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # #                    C O M M A N D S                  # # # # # # # # # # # # # # # #
