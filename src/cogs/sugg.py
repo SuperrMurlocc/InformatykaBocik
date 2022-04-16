@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 from random import randint
 
-class Suggestions(commands.Cog):
+class Sugg(commands.Cog):
 	description = 'Przesyłanie sugestii o działaniu bota' # Required field
 	qualified_name = "Sugestie"
 	
@@ -17,7 +17,7 @@ class Suggestions(commands.Cog):
 	# Helpers
 	@staticmethod
 	def console(msg, who='cog'):
-		print(f'[{__class__.__name__}] ({who})\t: {msg}')
+		print(f'[{__class__.__name__}] {who}\t\t: {msg}')
 
 	@staticmethod
 	def random_with_N_digits(n):
@@ -56,4 +56,4 @@ class Suggestions(commands.Cog):
 
 
 def setup(client):
-	client.add_cog(Suggestions(client))
+	client.add_cog(Sugg(client))

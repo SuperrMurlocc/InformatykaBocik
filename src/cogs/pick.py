@@ -4,7 +4,7 @@ import random
 import secrets
 import discord.utils
 
-class RandomPicker(commands.Cog):
+class Picker(commands.Cog):
 	description = 'Wybiera jedną osobę w obrębie danej roli' # Required field
 	qualified_name = "Losowanie"
 	
@@ -14,7 +14,7 @@ class RandomPicker(commands.Cog):
 	# Helpers
 	@staticmethod
 	def console(msg, who='cog'):
-		print(f'[{__class__.__name__}] ({who})\t: {msg}')
+		print(f'[{__class__.__name__}] {who}\t: {msg}')
 
 	# Events
 	@commands.Cog.listener()
@@ -53,4 +53,4 @@ class RandomPicker(commands.Cog):
 
 
 def setup(client):
-	client.add_cog(RandomPicker(client))
+	client.add_cog(Picker(client))

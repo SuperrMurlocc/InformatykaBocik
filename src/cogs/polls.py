@@ -37,7 +37,7 @@ class Polls(commands.Cog):
 
 	@staticmethod
 	def console(msg, who='cog'):
-		print(f'[{__class__.__name__}] ({who})\t: {msg}')
+		print(f'[{__class__.__name__}] {who}\t\t: {msg}')
 
 	# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	# # # # # # # # # # # # # # # #                      E V E N T S                    # # # # # # # # # # # # # # # #

@@ -15,7 +15,7 @@ class Info(commands.Cog):
 	# Helpers
 	@staticmethod
 	def console(msg, who='cog'):
-		print(f'[{__class__.__name__}] ({who})\t: {msg}')
+		print(f'[{__class__.__name__}] {who}\t\t: {msg}')
 
 	# Events
 	@commands.Cog.listener()
@@ -23,7 +23,7 @@ class Info(commands.Cog):
 		self.console('is ready')
 
 	# Commands
-	@commands.command(brief="Zwraza podstawowe informacje o bocie", aliases=["informacje", "information", "aboutme"])
+	@commands.command(brief="Zwraca podstawowe informacje o bocie", aliases=["informacje", "information", "aboutme"])
 	async def info(self, ctx):
 		await ctx.message.delete() # Delete user message
 		
