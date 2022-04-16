@@ -19,6 +19,8 @@ TOKEN = get_secret('TOKEN')
 
 intents = discord.Intents.default()
 intents.members = True
+intents.presences = True
+
 activity_name = f'{PREFIX}help'
 activity = discord.Activity(type=discord.ActivityType.listening, name=activity_name)
 
