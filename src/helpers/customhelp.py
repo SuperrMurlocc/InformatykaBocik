@@ -58,29 +58,27 @@ class CustomHelpCommand(commands.HelpCommand):
 
         await ctx.send(embed=helpmsg)
 
+    async def send_cog_help(self, cog):
+        print("COG", cog)
+        return await super().send_cog_help(cog)
 
-async def send_cog_help(self, cog):
-    print("COG", cog)
-    return await super().send_cog_help(cog)
+    async def send_group_help(self, group):
+        print("GROUP", group)
+        return await super().send_group_help(group)
 
+    async def send_command_help(self, command):
+        await self.context.message.delete()
 
-async def send_group_help(self, group):
-    print("GROUP", group)
-    return await super().send_group_help(group)
-
-
-async def send_command_help(self, command):
-    await self.context.message.delete()
-
-    if command.description:
-        helpmsg = discord.Embed(title=f"**${command}**", description=f'{command.description}',
-                                color=discord.Colour.blue())
-        helpmsg.set_footer(text=f'utworzono na prośbę {self.context.author.display_name}',
-                           icon_url=self.context.author.avatar_url)
-        return await self.context.send(embed=helpmsg)
-    else:
-        helpmsg = discord.Embed(title="Sory...", description=f"{command} nie ma wypełnionego opisu szczegółowego :/",
-                                color=discord.Colour.red())
-        helpmsg.set_footer(text=f'utworzono na prośbę {self.context.author.display_name}',
-                           icon_url=self.context.author.avatar_url)
-        return await self.context.send(embed=helpmsg)
+        if command.description:
+            helpmsg = discord.Embed(title=f"**${command}**", description=f'{command.description}',
+                                    color=discord.Colour.blue())
+            helpmsg.set_footer(text=f'utworzono na prośbę {self.context.author.display_name}',
+                               icon_url=self.context.author.avatar_url)
+            return await self.context.send(embed=helpmsg)
+        else:
+            helpmsg = discord.Embed(title="Sory...",
+                                    description=f"{command} nie ma wypełnionego opisu szczegółowego :/",
+                                    color=discord.Colour.red())
+            helpmsg.set_footer(text=f'utworzono na prośbę {self.context.author.display_name}',
+                               icon_url=self.context.author.avatar_url)
+            return await self.context.send(embed=helpmsg)
