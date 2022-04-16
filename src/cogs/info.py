@@ -6,45 +6,47 @@ import platform
 
 
 class Info(commands.Cog):
-	description = 'Informacje o bocie' # Required field
-	qualified_name = "Info"
-	
-	def __init__(self, client):
-		self.client = client
+    description = 'Informacje o bocie'  # Required field
+    qualified_name = "Info"
 
-	# Helpers
-	@staticmethod
-	def console(msg, who='cog'):
-		print(f'[{__class__.__name__}] {who}\t\t: {msg}')
+    def __init__(self, client):
+        self.client = client
 
-	# Events
-	@commands.Cog.listener()
-	async def on_ready(self):
-		self.console('is ready')
+    # Helpers
+    @staticmethod
+    def console(msg, who='cog'):
+        print(f'[{__class__.__name__}] {who}\t\t: {msg}')
 
-	# Commands
-	@commands.command(brief="Zwraca podstawowe informacje o bocie", aliases=["informacje", "information", "aboutme"])
-	async def info(self, ctx):
-		await ctx.message.delete() # Delete user message
-		
-		message = discord.Embed(
-			title=f'Informacje o bocie {self.client.user.name}',
-			color = discord.Color.random(),
-		)
-		
-		message.set_thumbnail(url=self.client.user.avatar_url)
+    # Events
+    @commands.Cog.listener()
+    async def on_ready(self):
+        self.console('is ready')
 
-		field = ''
-		for u in urls:
-			field += f'• [{u}]({urls[u]})\n'
-		
-		message.add_field(name='GitHub', value=field)
-		
-		message.add_field(name='Informacje o serwerze', value=f'{platform.system()}\n{platform.release()}{platform.architecture()[0]}\nPython {platform.python_version()}\ndiscord.py {discord.__version__}', inline=False)
+    # Commands
+    @commands.command(brief="Zwraca podstawowe informacje o bocie", aliases=["informacje", "information", "aboutme"])
+    async def info(self, ctx):
+        await ctx.message.delete()  # Delete user message
 
-		message.set_footer(text=f'utworzono na prośbę {ctx.author.display_name}', icon_url=ctx.author.avatar_url)
-		await ctx.send(embed=message)
+        message = discord.Embed(
+            title=f'Informacje o bocie {self.client.user.name}',
+            color=discord.Color.random(),
+        )
+
+        message.set_thumbnail(url=self.client.user.avatar_url)
+
+        field = ''
+        for u in urls:
+            field += f'• [{u}]({urls[u]})\n'
+
+        message.add_field(name='GitHub', value=field)
+
+        message.add_field(name='Informacje o serwerze',
+                          value=f'{platform.system()}\n{platform.release()}{platform.architecture()[0]}\nPython {platform.python_version()}\ndiscord.py {discord.__version__}',
+                          inline=False)
+
+        message.set_footer(text=f'utworzono na prośbę {ctx.author.display_name}', icon_url=ctx.author.avatar_url)
+        await ctx.send(embed=message)
 
 
 def setup(client):
-	client.add_cog(Info(client))
+    client.add_cog(Info(client))
