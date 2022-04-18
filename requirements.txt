@@ -1,5 +1,0 @@
-deepl==1.6.0
-discord.py==1.7.3
-Flask==2.1.1
-python-dotenv==0.20.0
-requests==2.22.0
