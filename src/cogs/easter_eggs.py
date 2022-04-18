@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions
 import random
 import os
@@ -11,7 +11,7 @@ class Eggs(commands.Cog):
 	
 	egg_hunt_channel_ID = int(0)
 	CHANNEL_NAME = 'zbieranie-jajek'
-	cooldown_time = 0
+	cooldown_time = 1
 	red = []
 	blue = []
 	points = {}
@@ -68,11 +68,7 @@ class Eggs(commands.Cog):
 	@commands.Cog.listener()
 	async def on_ready(self):
 		self.console('is ready')
-				
-	# Commands
-	@has_permissions(administrator=True)
-	@commands.command(brief="Uruchamia grę w zbieranie jajek", aliases=["eggs"])
-	async def jaja(self, ctx):
+		
 		# Check if there is progress already saved
 		if self.are_teams_saved():
 			self.red, self.blue, self.points, self.all_eggs_available, self.red_eggs, self.blue_eggs = self.load_teams()
@@ -98,7 +94,18 @@ class Eggs(commands.Cog):
 			self.blue_eggs = 0
 			self.save_teams(self.red, self.blue, self.points, self.all_eggs_available, self.red_eggs, self.blue_eggs)
 			self.console('saved teams to file')
+		# Start autosave
+		self.autosave.start()
 
+	@tasks.loop(minutes=5)
+	async def autosave(self):
+		self.save_teams(self.red, self.blue, self.points, self.all_eggs_available, self.red_eggs, self.blue_eggs)
+		self.console('saved teams to file')
+				
+	# Commands
+	@has_permissions(administrator=True)
+	@commands.command(brief="Uruchamia grę w zbieranie jajek", aliases=["eggs"])
+	async def jaja(self, ctx):
 		# Create egg game channel if missing
 		if not any(self.CHANNEL_NAME in channel.name for channel in ctx.guild.channels):
 			new_channel = await ctx.guild.create_text_channel(self.CHANNEL_NAME)
