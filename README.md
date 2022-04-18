@@ -17,11 +17,10 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-![GitHub all releases](https://img.shields.io/github/downloads/SuperrMurlocc/InformatykaBocik/total)
 ![Discord active users](https://img.shields.io/discord/761150834489688094?label=discord)
 ![GitHub issues](https://img.shields.io/github/issues/SuperrMurlocc/InformatykaBocik)
 ![GitHub last commit](https://img.shields.io/github/last-commit/SuperrMurlocc/InformatykaBocik)
-![GitHub contributors](https://img.shields.io/github/all-contributors/SuperrMurlocc/InformatykaBocik)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/SuperrMurlocc/InformatykaBocik.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/SuperrMurlocc/InformatykaBocik/context:python)
 
 <!-- PROJECT LOGO -->
 <br />
