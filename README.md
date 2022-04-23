@@ -76,42 +76,37 @@
 
 Katalogi:
 
-- **./res/**:
-    - zasoby
+- **res/** - zasoby
 
-- **./src/**
-    - **cogs**:
+- **src/**
+    - **cogs/**:
     	> Każdy **cog** jest „modułem” czyli **zestawem komend**  
-	Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
-		- **count.py**:
-		    - Liczenie od 1 w górę
-		- **dev.py**:
-		    - Komendy pomocnicze dla developerów
-		- **info.py**:
-		    - Podaje najważniejsze info o bocie
-		- **pick.py**:
-		    - Wybiera jedną osobę w obrębie danej roli
-		- **polls.py**:
-		    - Moduł odpowiedzialny za tworzenie ankiet
-		- **sugg.py**:
-		    - Umożliwia wysyłanie wiadomości do deweloperów
-    - **helpers**:
-    	> Pliki pomocnicze 
-		- **checks.py**
-			-  ograniczenia komend (np tylko dla administratorów itd)
-		- **customhelp.py**
-			-  customizacja komendy help
-		- **keep_alive.py**
-			-  do podtrzymywania repla
-		- **logger.py**
-			-  jeśli bot działa w trybie `LOGGING_MODE`, to moduł tworzy plik logów w katalogu `log/` zawierający otrzymane webhooki
-		- **reactions.py**
-			-  obsługa reakcji
-		- **secrets.py**
-			-  czyli banalna obsługa sekretów
+		Każdy moduł można ładować i wyładować (patrz sekcja moduły w main);
 
-- **./templates/**
-    - templatki pomocnicze
+		| Nazwa			| Opis											 |
+		| 		---		| ---											 |
+		| **info.py**	| Podaje najważniejsze info o bocie				 |
+		| **dev.py**	| Komendy pomocnicze dla developerów			 |
+		| **polls.py**	| Tworzenie ankiet								 |
+		| **count.py**	| Liczenie od 1 w górę							 |
+		| **pick.py**	| Wybiera jedną osobę w obrębie danej roli		 |
+		| **sugg.py**	| Umożliwia wysyłanie wiadomości do deweloperów	 |
+
+
+    - **helpers/**:
+    	> Pliki pomocnicze 
+
+		| Nazwa				| Opis										|
+		| 		---			| ---										|
+		| **checks.py**		| Ograniczenia komend						|
+		| **customhelp.py**	| Customizacja komendy help					|
+		| **logger.py**		| obsługa trybu `LOGGING_MODE`				|
+		| **reactions.py**	| Wybiera jedną osobę w obrębie danej roli	|
+		| **secrets.py**	| Obsługa sekretów							|
+
+- **templates/** - templatki pomocnicze
+
+- **special/** - moduży nieużywane stworzona na specjalną okazję
 
 <br>
 
@@ -119,7 +114,6 @@ Katalogi:
 
 * [Python 3](https://www.python.org/)
 * [Discord.py](https://discordpy.readthedocs.io/en/stable/index.html)
-* [replit.com](https://replit.com/~)
 * [Numbers API](http://numbersapi.com/)
 * [DeepL Translator](https://www.deepl.com/translator)
 
@@ -226,25 +220,17 @@ $help
 <!-- SUGESTIE -->
 ## Do zrobienia
 
-### 👌 Aktualne prace
-
-- [ ] **Ładna dokumentacja komend**
-	- [x] Customowa wersja komendy help
-	- [ ] Customowa wersja komendy help {komenda}
-- [ ] Łatwe do zapamiętania aliasy do komend w języku polskim i angielskim
-- [ ] Podpięcie Bota do serwera INF WEEIA
+<!-- ### 👌 Aktualne prace -->
 
 ### 💙 Zakończone
 
+- [x] Ładna dokumentacja komend
+- [x] Łatwe do zapamiętania aliasy do komend w języku polskim i angielskim
+- [x] Podpięcie Bota do serwera INF WEEIA
 - [X] Komenda do przesyłania sugestii
 - [X] Losowanie użytkownika w obrębie danej roli (np. $random Filmowiec)
 - [X] Ankiety:
-	- [X] Implementacja maksymalnej liczby odpowiedzi w ankiecie
-	- [X] Dynamiczne słupki postępu
 - [x] Liczenie:
-	- [x] Dodawanie kanału
-	- [x] Reagowanie na wiadomości w obrębie tego kanału
-
 
 <p align="right">(<a href="#top">powrót na górę</a>)</p>
 

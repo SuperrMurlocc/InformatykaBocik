@@ -15,6 +15,7 @@ class Counter(commands.Cog):
 	qualified_name = "Liczenie"
 	
 	counting_channel_ID = int(0)
+	default_channel_name = 'liczenie'
 	last_user_ID = 0
 	next_number = 1
 	responses = ['👌', '👍', '🥳', '😄', '😺', '🙆‍♀️', '🙆‍♂️', '🆗', '✅', '✨']
@@ -36,10 +37,30 @@ class Counter(commands.Cog):
 	# Events
 	@commands.Cog.listener()
 	async def on_ready(self):
-		self.console('is ready')
+
+		# Check if the channel with default_channel_name already exists
+		# Find channel_id by name
+		for channel in self.client.guilds[0].channels:
+			if channel.name == self.default_channel_name:
+				self.counting_channel_ID = channel.id
+				self.console(f'Found channel {self.default_channel_name}')
+				
+				# Load saved number
+				pins = await channel.pins()
+				for m in pins:
+					self.next_number = int(m.content) + 1
+					self.last_user_ID = m.author.id
+				return
+				
+		self.console(f'Did not found channel {self.default_channel_name}')
+
+
 
 	@commands.Cog.listener()
 	async def on_message(self, message = discord.message):
+		#Remove pinned messages from bot
+		if message.type == "PINS_ADD" and message.author.bot:
+			message.delete()
 		if message.author.bot:
 			return
 		if message.channel.id == self.counting_channel_ID:
@@ -51,6 +72,14 @@ class Counter(commands.Cog):
 			emoji = random.choice(self.responses)
 
 			await message.add_reaction(emoji)
+			# Clear pinned messages (autosave)
+			pins = await message.channel.pins()
+			for m in pins:
+				if m is not None:
+					await m.unpin()
+
+			# Autosave
+			await message.pin()
 
 			# Get a fact of the number from Numbers API
 			url = f'http://numbersapi.com/{message.content}/?default=0'
@@ -81,6 +110,14 @@ class Counter(commands.Cog):
 		if stringToParse is None:
 			await ctx.send(f'Sprobuj `{str(ctx.message.content)} \'nazwa kanału do liczenia\'`')
 		else:
+			# '_' To tell the bot the channel already exists
+			# and sending welcome embed isn't necessary 
+			dont_sent_embed = False
+			
+			if stringToParse[0] == '_':
+				stringToParse = stringToParse[1:]
+				dont_sent_embed = True
+				
 			# Find channel_id by name
 			for channel in ctx.guild.channels:
 				if channel.name == stringToParse:
@@ -93,8 +130,16 @@ class Counter(commands.Cog):
 						description='Na tym kanale utworzono liczenie',
 					)
 					info.add_field(name='Zasady', value='• Liczymy od 1 w górę\n• Jedna osoba nie może wysłać wiadomości **dwa razy pod rząd**\n\n*Enjoy!*')
-					await channel.send(embed=info)
+
+					if not dont_sent_embed:
+						await channel.send(embed=info)
+						
 					await channel.edit(topic='To infinity and beyond!')
+
+					# Autosave
+					pins = await channel.pins()
+					for m in pins:
+						self.next_number = int(m.content) + 1
 					return
 
 			await ctx.send(f'Nie znaleziono kanału o nazwie #{stringToParse}')
@@ -125,7 +170,7 @@ class Counter(commands.Cog):
 		await ctx.send('Niepoprawna nazwa kanału')
 
 
-	@commands.command(brief="Ustawia aktualną liczbę", aliases=["setnumber"])
+	@commands.command(brief="Ustawia aktualną liczbę", aliases=["setnumber"], hidden=True)
 	async def ustawliczbe(self, ctx, *, stringToParse=None):
 		if stringToParse is None or not stringToParse.isnumeric():
 			await ctx.send(f'Użycie: `{str(ctx.message.content)} <dodatnia liczba całkowita>`')
@@ -134,6 +179,10 @@ class Counter(commands.Cog):
 		self.next_number = next
 		self.console('setting current number to {next}', ctx.author.display_name)
 		await ctx.send(f'Ustawiono numer na **{next}**')
+
+	@commands.command(brief="Sprawdza aktualna liczbe", aliases=["whatnum"], hidden=True)
+	async def jakaliczba(self, ctx, *, stringToParse=None):
+		await ctx.send(f'Kolejna liczba to **{self.next_number}**')
 	
 # Setup	
 def setup(client):

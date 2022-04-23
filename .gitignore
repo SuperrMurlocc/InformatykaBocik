@@ -15,3 +15,6 @@ __pycache__
 !.vscode/*.code-snippets
 .history/
 *.vsix
+# Heroku deployment files
+Procfile
+requirements.txt
